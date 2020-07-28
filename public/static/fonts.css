@@ -1,0 +1,23 @@
+/**
+ * Font Definitions
+ */
+
+/*--------*/
+/* Lato Regular */
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+
+/* Lato Bold */
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+/* Bebas Neue */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/assets/fonts/BebasNeue-Regular.ttf") format("truetype");
+}

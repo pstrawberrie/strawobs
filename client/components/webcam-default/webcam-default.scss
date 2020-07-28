@@ -1,0 +1,15 @@
+/**
+ * Scene Default
+ */
+@import '~style-utils';
+$component-name: webcam-default;
+
+.#{$component-name} {
+    position: absolute;
+    left: 0;
+    top: 447px;
+    width: 447px;
+    height: 262px;
+    background-color: rgba(255,0,255,0.24);
+    overflow: hidden;
+}

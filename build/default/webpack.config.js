@@ -21,7 +21,7 @@ module.exports = merge(baseConfig, {
     output: {
         filename: 'default.bundle.js',
         library: 'strawobs_default',
-        path: path.resolve(__dirname, '../../dist'),
+        path: path.resolve(__dirname, '../../public/dist'),
         pathinfo: false,
     },
 

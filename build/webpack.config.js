@@ -2,6 +2,7 @@
  * Core Webpack Config
  */
 const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
@@ -161,6 +162,16 @@ const coreConfig = {
      */
     plugins: [
         new MiniCssExtractPlugin({ filename: 'default.bundle.css' }),
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3003,
+            proxy: "localhost:3003",
+            // server: {
+            //     baseDir: ['../public'],
+            //     directory: true
+            // },
+            open: false
+          })
     ],
 
     /**

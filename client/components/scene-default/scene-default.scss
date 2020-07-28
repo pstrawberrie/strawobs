@@ -2,8 +2,9 @@
  * Scene Default
  */
 @import '~style-utils';
+$component-name: scene-default;
 
-.scene-default {
+.#{$component-name} {
     position: relative;
     display: block;
     overflow: hidden;
