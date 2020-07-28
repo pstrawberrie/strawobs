@@ -1,0 +1,48 @@
+{
+    "name": "strawobs",
+    "version": "1.0.0",
+    "description": "",
+    "author": "pstraw",
+    "main": "index.js",
+    "scripts": {
+        "watch:client-default": "cross-env webpack --config ./build/default/webpack.config.js --watch --colors",
+        "build:client-default": "cross-env webpack --config ./build/default/webpack.config.js --colors",
+        "start": "npm run dev",
+        "dev": "cross-env FORCE_COLOR=1 CI=true concurrently --prefix \"[ {name} ]\"  --names \"Client\" --prefix-colors \"white.bgCyan.bold,white.bgGreen.bold\" \"npm run watch:client-default\" --kill-others"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.10.5",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/preset-env": "^7.10.4",
+        "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.1.0",
+        "concurrently": "^5.2.0",
+        "cross-env": "^7.0.2",
+        "css-loader": "^4.0.0",
+        "cssnano": "^4.1.10",
+        "eslint": "^7.5.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-formatter-pretty": "^4.0.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-import": "^2.22.0",
+        "mini-css-extract-plugin": "^0.9.0",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "postcss-reporter": "^6.0.1",
+        "postcss-scss": "^2.1.1",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.2",
+        "stylelint": "^13.6.1",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-formatter-pretty": "^2.1.0",
+        "terser-webpack-plugin": "^3.0.8",
+        "webpack": "^4.44.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-import-glob-loader": "^1.6.3",
+        "webpack-merge": "^5.0.9"
+    },
+    "dependencies": {
+        "core-js": "^3.6.5"
+    }
+}

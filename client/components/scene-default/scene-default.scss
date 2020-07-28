@@ -1,0 +1,12 @@
+/**
+ * Scene Default
+ */
+@import '~style-utils';
+
+.scene-default {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: $scene-width-default;
+    height: $scene-height-default;
+}

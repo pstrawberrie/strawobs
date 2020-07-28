@@ -1,0 +1,3 @@
+## FE Build
+node_modules/
+**/*bundle.js
