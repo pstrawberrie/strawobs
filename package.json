@@ -3,16 +3,17 @@
     "version": "1.0.0",
     "description": "",
     "author": "pstraw",
-    "main": "index.js",
+    "main": "",
     "scripts": {
         "watch:client-default": "cross-env webpack --config ./build/default/webpack.config.js --watch --colors",
         "build:client-default": "cross-env webpack --config ./build/default/webpack.config.js --colors",
         "watch:server": "cross-env nodemon -e js,pug server.js --colors",
+        "watch:bot": "cross-env nodemon -e js bot.js --colors",
         "production:server": "cross-env NODE_ENV=production node server.js",
         "start": "npm run dev",
-        "dev": "cross-env FORCE_COLOR=1 CI=true concurrently --prefix \"[ {name} ]\"  --names \"Client, Server\" --prefix-colors \"yellow.bgBlack.bold,white.bgBlack.bold\" \"npm run watch:client-default\" \"npm run watch:server\" --kill-others"
+        "dev": "cross-env FORCE_COLOR=1 CI=true concurrently --prefix \"[ {name} ]\"  --names \"Client, Server, Bot\" --prefix-colors \"yellow.bgBlack.bold,white.bgBlack.bold,cyan.bgBlack.bold\" \"npm run watch:client-default\" \"npm run watch:server\" \"npm run watch:bot\" --kill-others"
     },
-    "license": "ISC",
+    "license": "MIT",
     "nodemonConfig": {
         "ignore": [
             "client/*",
@@ -63,6 +64,9 @@
         "core-js": "^3.6.5",
         "express": "^4.17.1",
         "helmet": "^3.23.3",
-        "pug": "^3.0.0"
+        "lowdb": "^1.0.0",
+        "pug": "^3.0.0",
+        "tmi.js": "^1.5.0",
+        "ws": "^7.3.1"
     }
 }

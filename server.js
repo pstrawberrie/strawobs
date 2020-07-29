@@ -1,6 +1,7 @@
 /**
  * Node Server
  */
+const config = require('./config');
 const path = require('path');
 const chalk = require('chalk');
 const express = require('express');
@@ -40,6 +41,6 @@ if (app.get('env') === 'development') {
 app.use(errorHandlers.productionErrors);
 
 // Start Server
-app.listen(port, () => {
-  console.log(chalk.green(`+++ Web Server Started on localhost:${port} +++`));
+app.listen(config.webPort, () => {
+  console.log(chalk.green(`+++ Web Server Started on localhost:${config.webPort} +++`));
 });

@@ -104,8 +104,11 @@ dist
 .tern-port
 
 ##################
-# Dev Preference
+# Project
 ##################
+config.js
+db.json
+
 # Mac
 .DS_Store
 
