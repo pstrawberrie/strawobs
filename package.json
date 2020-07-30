@@ -66,6 +66,7 @@
         "helmet": "^3.23.3",
         "lowdb": "^1.0.0",
         "pug": "^3.0.0",
+        "reconnecting-websocket": "^4.4.0",
         "tmi.js": "^1.5.0",
         "ws": "^7.3.1"
     }

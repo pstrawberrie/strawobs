@@ -3,21 +3,32 @@
  */
 
 /*--------*/
-/* Lato Regular */
+/* Space Ranger Condensed */
 @font-face {
-  font-family: "Lato";
-  src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
+    font-family: 'Space Ranger Condensed';
+    src: url('/assets/fonts/SpaceRangerCondensed.woff2') format('woff2'),
+        url('/assets/fonts/SpaceRangerCondensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* Lato Bold */
+/* Roboto Mono (Regular) */
 @font-face {
-  font-family: "Lato";
-  src: url("/assets/fonts/Lato-Bold.ttf") format("truetype");
-  font-weight: bold;
+    font-family: 'Roboto Mono';
+    src: url('/assets/fonts/RobotoMono-Regular.woff2') format('woff2'),
+        url('/assets/fonts/RobotoMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* Bebas Neue */
+/* Roboto Mono (Bold) */
 @font-face {
-  font-family: "Bebas Neue";
-  src: url("/assets/fonts/BebasNeue-Regular.ttf") format("truetype");
+    font-family: 'Roboto Mono';
+    src: url('/assets/fonts/RobotoMono-Bold.woff2') format('woff2'),
+        url('/assets/fonts/RobotoMono-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }

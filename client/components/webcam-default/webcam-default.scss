@@ -9,7 +9,29 @@ $component-name: webcam-default;
     left: 0;
     top: 447px;
     width: 447px;
-    height: 262px;
-    background-color: rgba(255,0,255,0.24);
+    height: 293px;
+    background: url('#{$site-images}camborder-default.png') no-repeat;
     overflow: hidden;
+
+    // Plane9 darken
+    &::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        top: 237px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.48);
+    }
+
+    &__logo {
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        top: 245px;
+        height: 56px;
+        background: url('#{$site-images}logo-white-default.png') no-repeat center;
+        background-size: 280px 56px;
+        transition: opacity 0.3s ease-in-out;
+    }
 }

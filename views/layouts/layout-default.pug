@@ -1,9 +1,10 @@
+- const dateString = `?${Date.now()}`;
 doctype html
 html
     head
         title Straw OBS
-        link(rel="stylesheet", href="/static/fonts.css")
-        link(rel="stylesheet", href=`/dist/default.bundle.css`)
+        link(rel="stylesheet", href=`/static/fonts.css?${dateString}`)
+        link(rel="stylesheet", href=`/dist/default.bundle.css?${dateString}`)
         link(rel="shortcut icon", type="image/png", href="/assets/images/favicon.png")
         meta(name="viewport" content="width=device-width, initial-scale=1")
 
@@ -12,5 +13,5 @@ html
             block content
 
         block scripts
-            - const devString = dev ? `?${Date.now()}` : '';
-            script(src=`/dist/default.bundle.js${devString}`)
+
+            script(src=`/dist/default.bundle.js${dateString}`)

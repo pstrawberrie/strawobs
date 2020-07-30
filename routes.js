@@ -13,7 +13,8 @@ const pagesController = require('./controllers/pagesController');
 /**
  * Page Routing
  */
-router.get('/', catchErrors(pagesController.index));
+router.get('/scene/default', pagesController.sceneDefault);
+router.get('/scene/default-over', pagesController.sceneDefaultOver);
 
 // Export Router
 module.exports = router;

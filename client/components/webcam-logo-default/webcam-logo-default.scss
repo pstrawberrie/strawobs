@@ -1,0 +1,13 @@
+/**
+ * Scene Default
+ */
+@import '~style-utils';
+$component-name: webcam-logo-default;
+
+.#{$component-name} {
+    position: absolute;
+    left: 9px;
+    top: 640px;
+    width: 425px;
+    height: 55px;
+}

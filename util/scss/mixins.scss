@@ -2,7 +2,8 @@
  * Mixins
  */
 
-@mixin test {
-    content: "test";
-    background-color: #f0f;
+// Gradients
+@mixin gradient-webcam-default {
+    background: rgb(17,17,17);
+    background: linear-gradient(53deg, rgba(17,17,17,1) 0%, rgba(34,34,34,1) 26%, rgba(58,58,58,1) 45%, rgba(34,34,34,1) 67%, rgba(36,36,36,1) 100%);
 }

@@ -1,26 +1,28 @@
 /**
  * Bot Command Entry
  */
-const db = require('../db');
-const debug = true;
+const { parseCommand } = require('../util/js/bot');
 
-// Frisk a User to make sure we have the data
-function friskUser(tags) {
-    if(tags.username && tags['user-id']) {
-        const hasUser = db.get('users').find({ id: tags['user-id'] }).value();
-        if(!hasUser) {
-            db.get('users').push({ username: tags.username, id: tags['user-id']}).write();
-            if(debug) console.log(`added new user ${tags.username} with id ${tags['user-id']}`);
-        } else {
-            if(debug) console.log(`user ${tags.username} already exists`);
-        }
-    }
-}
+// Commands
+const friskUser = require('./frisk-user');
+const lurk = require('./lurk');
 
 // The Command Entry
 module.exports = (socketConnection, messageData) => {
-    if(!socketConnection || !messageData) return console.log('Command entry failed (no socket connection or no message data)');//eslint-disable-line
-    friskUser(messageData.tags);
+    if (!socketConnection) return console.log('Command entry failed - no socket connection');
+    if (!messageData) return console.log('Command entry failed - no message data');
 
-    console.log(messageData);
+    friskUser(messageData.tags).then(() => {
+        const commandObj = parseCommand(messageData.message);
+        if(!commandObj) return;
+
+        switch(commandObj.command) {
+            case 'lurk':
+                lurk(socketConnection, commandObj, messageData);
+                break;
+            default:
+                return;
+        }
+
+    }).catch(err => console.log(`Error from friskUser in command-entry.js: ${err}`));
 };
