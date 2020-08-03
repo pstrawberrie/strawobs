@@ -1,0 +1,15 @@
+extends layouts/layout-default
+
+block content
+  .scene-default
+    .code-scene-default
+        .border-cam
+        .logo
+        .code-info
+            .code-info__title Working on #{codeInfo.project}
+            .code-info__description=codeInfo.description
+            .code-info__session Working on #{codeInfo.session}
+        .user-actions-default
+            .lurk-action
+                .lurk-action__name
+                .lurk-action__image

@@ -1,0 +1,5 @@
+{
+    "project": "Straw OBS",
+    "description": "A prototype web application which outputs scene overlays for OBS and sends events via chatbot",
+    "session": "Continuing code scene + game scene, adding new commands"
+}

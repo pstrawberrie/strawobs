@@ -6,6 +6,14 @@ const componentName = 'user-actions-default';
 
 class UserActionDefault extends Component {
     /**
+     * Elements
+     */
+    elements = {
+        lurkEle: this.element.querySelector('.lurk-action'),
+        lurkNameEle: this.element.querySelector('.lurk-action__name'),
+    }
+
+    /**
      * State & Util
      */
     lurkActive = false;
@@ -23,26 +31,21 @@ class UserActionDefault extends Component {
         const runLurk = (username) => {
             if(this.lurkActive) return console.warn('Lurk already running');//eslint-disable-line
             const lurkAnimDuration = 4000;
-            const lurkClass = 'lurk-action';
+            const toggleLurk = () => {
+                this.lurkActive = !this.lurkActive;
+                if(this.elements.lurkEle.classList.contains('active')) {
+                    this.elements.lurkNameEle.innerText = '';
+                    this.elements.lurkEle.classList.remove('active');
+                } else {
+                    this.elements.lurkNameEle.innerText = username;
+                    this.elements.lurkEle.classList.add('active');
+                }
+            };
 
-            const lurkEle = document.createElement('div');
-            lurkEle.classList.add(lurkClass);
-
-            const lurkImgEle = document.createElement('div');
-            lurkImgEle.classList.add(`${lurkClass}__image`);
-
-            const lurkNameEle = document.createElement('div');
-            lurkNameEle.classList.add(`${lurkClass}__name`);
-            lurkNameEle.innerText = username;
-
-            lurkEle.appendChild(lurkNameEle);
-            lurkEle.appendChild(lurkImgEle);
-            this.element.appendChild(lurkEle);
-            this.lurkActive = true;
+            toggleLurk();
 
             return setTimeout(() => {
-                this.element.removeChild(lurkEle);
-                this.lurkActive = false;
+                toggleLurk();
             }, lurkAnimDuration);
         };
 

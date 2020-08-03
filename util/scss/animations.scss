@@ -72,6 +72,35 @@
     }
 }
 
+// Code Cam Border
+@keyframes codecamborder1 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes codecamborder2 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 // Lurk Animation
 @keyframes lurkimage {
     0% {
@@ -100,7 +129,27 @@
         opacity: 1;
     }
 
-    40% {
+    20% {
+        opacity: 1;
+        transform: translate(0, 20px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0, 15px);
+    }
+}
+
+@keyframes lurknameup {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
         opacity: 1;
         transform: translate(0, -20px);
     }

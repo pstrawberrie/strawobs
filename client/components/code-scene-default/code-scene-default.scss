@@ -1,0 +1,142 @@
+/**
+ * Code Area Default
+ */
+@import '~style-utils';
+$component-name: code-scene-default;
+
+.#{$component-name} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 226px;
+    width: 1305px;
+    border: 8px solid #1e1e1e;
+    border-bottom-width: 9px;
+    border-left-width: 9px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        bottom: -8px;
+        right: -8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    // Cam Border
+    .border-cam {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: -1px;
+        width: 329px;
+        box-shadow: inset -4px 0 12px 0 rgba(0, 0, 0, 0.75);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-right: 8px solid #1e1e1e;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 1px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    // Logo
+    .logo {
+        position: absolute;
+        left: 1007px;
+        bottom: -22px;
+        width: 280px;
+        height: 56px;
+        background: url('#{$site-images}logo-white-default.png') no-repeat center center;
+        animation: flicker1 40s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    // Info
+    .code-info {
+        @extend .font-blinker;
+
+        display: none;
+        position: absolute;
+        left: 329px;
+        top: 1px;
+        bottom: 1px;
+        width: 960px;
+        padding: 0.5rem;
+        line-height: 1;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(36, 36, 36, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+
+        &__title {
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        &__project {
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 4px;
+        }
+
+        &__description {
+            display: none;
+            font-size: 1.2rem;
+        }
+
+        &__session {
+            display: none;
+        }
+
+        .value,
+        .label {
+            display: inline-block;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    }
+
+    // User Action Override
+    .user-actions-default {
+        top: 0;
+        left: auto;
+        right: 0;
+
+        .lurk-action {
+            left: auto;
+            right: 96px;
+            bottom: auto;
+            top: 80px;
+
+            &__name {
+                bottom: 20px;
+                left: 0;
+                text-align: center;
+            }
+
+            &.active {
+                .lurk-action__name {
+                    animation: lurknameup 1s ease-in-out;
+                    animation-delay: 2.2s;
+                }
+            }
+        }
+    }
+}

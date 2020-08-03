@@ -14,7 +14,7 @@ const pagesController = require('./controllers/pagesController');
  * Page Routing
  */
 router.get('/scene/default', pagesController.sceneDefault);
-router.get('/scene/default-over', pagesController.sceneDefaultOver);
+router.get('/scene/code', pagesController.sceneCode);
 
 // Export Router
 module.exports = router;

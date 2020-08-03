@@ -10,7 +10,7 @@ class SceneDefault extends Component {
      * Elements
      */
     elements = {
-
+        captionBox: this.element.querySelector('#caption-box')
     }
 
     /**
@@ -27,6 +27,43 @@ class SceneDefault extends Component {
     }
 
     /**
+     * Captioning
+     */
+    /* eslint-disable */
+    startCaptioning = () => {
+        if(!'webkitSpeechRecognition' in window || !this.elements.captionBox) return;
+        console.log('speech recognition enabled');
+
+        const scope = this;
+        const speechRecognizer = new webkitSpeechRecognition();
+        speechRecognizer.continuous = true;
+        speechRecognizer.interimResults = true;
+        speechRecognizer.lang = 'en-US';
+        speechRecognizer.start();
+
+        let finalTranscripts = '';
+
+        speechRecognizer.onresult = function (event) {
+            let interimTranscripts = '';
+            for (let i = event.resultIndex; i < event.results.length; i += 1) {
+                let transcript = event.results[i][0].transcript;
+                transcript.replace("\n", "<br>");
+                if (event.results[i].isFinal) {
+                    finalTranscripts += transcript;
+                } else {
+                    interimTranscripts += transcript;
+                }
+            }
+            scope.elements.captionBox.innerHTML = finalTranscripts + '<span style="color: #999">' + interimTranscripts + '</span>';
+        };
+        speechRecognizer.onerror = function (event) {
+            console.log('error from speech recognizer:');
+            console.log(event);
+        };
+    }
+    /* eslint-enable */
+
+    /**
      * Add Event Listeners
      */
     addEventListeners = () => {
@@ -38,6 +75,7 @@ class SceneDefault extends Component {
      */
     init() {
         connectWebsocket();
+        //this.startCaptioning();
         this.addEventListeners();
     }
 }

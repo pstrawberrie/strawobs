@@ -16,25 +16,25 @@ $component-name: user-actions-default;
     .lurk-action {
         position: absolute;
         display: inline-block;
-        width: 115px;
-        height: 115px;
+        width: 90px;
+        height: 90px;
         left: 0;
-        bottom: 0;
+        bottom: -280px;
 
         &__name {
             @extend .font-robotomono;
 
             position: absolute;
-            left: 0;
+            left: 8px;
             right: 0;
-            top: 75px;
+            bottom: -10px;
             width: 100%;
             font-size: 0.8rem;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-            text-align: center;
+            font-weight: bold;
+            color: $c-light;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 1);
+            text-align: left;
             opacity: 0;
-            animation: lurkname 1.4s ease-in-out;
-            animation-delay: 2.2s;
         }
 
         &__image {
@@ -43,12 +43,22 @@ $component-name: user-actions-default;
             left: 0;
             right: 0;
             width: 100%;
-            height: 115px;
+            height: 90px;
             background: url('#{$site-images}lurk.gif') no-repeat center center;
-            background-size: 115px;
+            background-size: 90px;
             transform: translateX(-2px);
             opacity: 0;
-            animation: lurkimage 2.6s ease-in-out;
+        }
+
+        &.active {
+            .lurk-action__name {
+                animation: lurkname 1s ease-in-out;
+                animation-delay: 2.2s;
+            }
+
+            .lurk-action__image {
+                animation: lurkimage 2.6s ease-in-out;
+            }
         }
     }
 }
