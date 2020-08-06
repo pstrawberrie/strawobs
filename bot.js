@@ -8,7 +8,7 @@ const commandEntry = require('./commands/command-entry');
 const WebSocket = require('ws');
 const tmi = require('tmi.js');
 
-const disableTwitch = false;
+const disableTwitch = true;
 
 // Websocket Server
 const wss = new WebSocket.Server({ port: config.wsPort });

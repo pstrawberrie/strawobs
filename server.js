@@ -12,7 +12,6 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 
 const errorHandlers = require('./handlers/errorHandlers');
-const port = 3003;
 
 // Middlewares
 app.use(helmet());
@@ -42,5 +41,5 @@ app.use(errorHandlers.productionErrors);
 
 // Start Server
 app.listen(config.webPort, () => {
-  console.log(chalk.green(`+++ Web Server Started on localhost:${config.webPort} +++`));
+  console.log(chalk.cyan(`+++ Web Server Started on localhost:${config.webPort} +++`));
 });
