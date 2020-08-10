@@ -14,15 +14,15 @@ $component-name: scene-code-default;
     border-bottom-width: 9px;
     border-left-width: 9px;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: -8px;
-        bottom: -8px;
-        right: -8px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: -8px;
+    //     left: -8px;
+    //     bottom: -8px;
+    //     right: -8px;
+    //     border: 1px solid rgba(255, 255, 255, 0.1);
+    // }
 
     // Cam Border
     .border-cam {
@@ -31,7 +31,7 @@ $component-name: scene-code-default;
         top: 0;
         bottom: -1px;
         width: 329px;
-        box-shadow: inset -4px 0 12px 0 rgba(0, 0, 0, 0.75);
+        //box-shadow: inset -4px 0 12px 0 rgba(0, 0, 0, 0.75);
 
         &::before {
             content: "";
@@ -50,7 +50,7 @@ $component-name: scene-code-default;
             left: 0;
             right: 0;
             bottom: 1px;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
         }
     }
 

@@ -1,0 +1,11 @@
+/**
+ * Code Area Default
+ */
+@import '~style-utils';
+$component-name: scene-lobby-default;
+
+.#{$component-name} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
